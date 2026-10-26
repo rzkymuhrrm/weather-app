@@ -43,6 +43,9 @@ function showCity() {
             const datas40 = getFetchDesc.list.slice(0, 3)
 
             containerActive.addEventListener("click", function() {
+
+                containers.innerHTML =`<div class="back"><</div>
+                    <div class="hourlies">`
                 console.log(this)
                 container2.classList.remove("transform")
 
@@ -152,14 +155,15 @@ async function showNearest() {
                 const container2 = document.querySelector('.container-full2')
                 const containers = document.querySelector('.container2')
 
-                containers.innerHTML =`<div class="back"><</div>
-                    <div class="hourlies">`
-
                 const getFetchDesc = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${e.target.value}&appid=983648dbfd74107ffc489832e8919603&units=metric`).then(response => response.json())
 
                 const datas40 = getFetchDesc.list.slice(0, 3)
 
                 container.addEventListener("click", function() {
+
+                    containers.innerHTML =`<div class="back"><</div>
+                    <div class="hourlies">`
+
                     console.log(this)
                     container2.classList.remove("transform")
 
